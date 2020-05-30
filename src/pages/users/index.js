@@ -10,7 +10,7 @@ class Users extends React.Component {
         return (
             <div>
                 Users <br />
-                <button onClick={() => this.props.getUsers()}>Add User</button>
+                <button onClick={() => this.props.onAddUserClicked()}>Add User</button>
                 <br />
                 {JSON.stringify(this.props.users)}
             </div>

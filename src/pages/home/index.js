@@ -5,12 +5,12 @@ import { addUser } from '../../core/redux/actions/user';
 class Home extends React.Component {
     render() {
         return (
-            <div>
+            <>
                 Home <br />
                 <button onClick={() => this.props.onAddUserClicked()}>Add User</button>
                 <br />
                 {JSON.stringify(this.props.users)}
-            </div>
+            </>
         )
     }
 }
