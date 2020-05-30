@@ -3,6 +3,11 @@ import {ADD_USER, UPDATE_USER} from '../types/user';
 const initialState = [];
 const users = (state = initialState, action) => {
     switch (action.type) {
+      case 'USERS_FETCH_SUCCEEDED': 
+        return [
+          ...state,
+          action.users
+        ];
       case ADD_USER:
         return [
           ...state,

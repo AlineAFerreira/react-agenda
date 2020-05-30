@@ -1,13 +1,16 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { addUser } from '../../core/redux/actions/user';
+import { addUser, getUsers } from '../../core/redux/actions/user';
 
 class Users extends React.Component {
+    componentDidMount() {
+        this.props.getUsers();
+    }
     render() {
         return (
             <div>
                 Users <br />
-                <button onClick={() => this.props.onAddUserClicked()}>Add User</button>
+                <button onClick={() => this.props.getUsers()}>Add User</button>
                 <br />
                 {JSON.stringify(this.props.users)}
             </div>
@@ -25,6 +28,9 @@ const mapDispatchToProps = dispatch => {
     return {
         onAddUserClicked: user => {
             dispatch(addUser(user))
+        },
+        getUsers: () => {
+            dispatch(getUsers())
         }
     }
 }
