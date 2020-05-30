@@ -4,9 +4,10 @@ import { addUser } from '../../core/redux/actions/user';
 
 class Home extends React.Component {
     render() {
+        console.log(process.env.REACT_APP_DOMAIN); 
         return (
             <>
-                Home <br />
+                Home {process.env.DOMAIN}<br />
                 <button onClick={() => this.props.onAddUserClicked()}>Add User</button>
                 <br />
                 {JSON.stringify(this.props.users)}
@@ -15,9 +16,9 @@ class Home extends React.Component {
     }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = ({users}) => {
     return {
-        users: state
+        users: users.users
     }
 }
 

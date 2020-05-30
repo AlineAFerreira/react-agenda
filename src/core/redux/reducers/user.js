@@ -1,20 +1,20 @@
 import {ADD_USER, UPDATE_USER} from '../types/user';
 
-const initialState = [];
+const initialState = {
+  users: []
+};
 const users = (state = initialState, action) => {
     switch (action.type) {
       case 'USERS_FETCH_SUCCEEDED': 
-        return [
+        return {
           ...state,
-          action.users
-        ];
+          users: action.users
+        };
       case ADD_USER:
-        return [
+        return {
           ...state,
-          {
-            ...action.user
-          }
-        ]
+          users: state.users.concat(action.user)
+        }
       case UPDATE_USER:
         return state.map(user =>
           user.id === action.user.id ? { ...action.user } : user

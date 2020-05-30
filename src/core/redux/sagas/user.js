@@ -4,8 +4,8 @@ import {userService} from '../../services/user'
 // worker Saga: will be fired on USER_FETCH_REQUESTED actions
 function* fetchUsers(action) {
    try {
-      const users = yield call(userService.getUsers);
-      yield put({type: "USERS_FETCH_SUCCEEDED", users: users.data});
+      const response = yield call(userService.getUsers);
+      yield put({type: "USERS_FETCH_SUCCEEDED", users: response.data.data});
    } catch (e) {
       yield put({type: "USERS_FETCH_FAILED", message: e.message});
    }
