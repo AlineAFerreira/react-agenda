@@ -1,5 +1,6 @@
 import React from "react";
 import Modal from 'react-modal';
+import './modal.css';
 
 Modal.setAppElement('#root');
 export default class AgendaModal extends React.PureComponent {
