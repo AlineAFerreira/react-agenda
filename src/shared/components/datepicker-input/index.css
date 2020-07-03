@@ -1,0 +1,10 @@
+.date-picker-input-container {
+    position: relative;
+}
+
+.datpicker-input-calendar {
+    position: absolute;
+    z-index: 10;
+    background: white;
+    border: 1px solid #ccc;
+}
