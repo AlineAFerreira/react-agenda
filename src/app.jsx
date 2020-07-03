@@ -1,7 +1,7 @@
 import React from "react";
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
-import interactionPlugin from "@fullcalendar/interaction"; // needed for dayClick
+import interactionPlugin from "@fullcalendar/interaction";
 import '@trendmicro/react-datepicker/dist/react-datepicker.css';
 import * as moment from 'moment';
 import { eventService } from "./core/services/event";
@@ -107,19 +107,19 @@ export default class App extends React.Component {
   }
 
   startEventsInterval() {
-    const { events } = this.state; // Pega todos os eventos do state
-    if (events && events.length > 0) { //Verifico se tem pelo menos 1 evento no state
-      const todayEvents = events.filter(this.isTodayEvent); // Verifico se tem algum evento no state com a data atual
+    const { events } = this.state; 
+    if (events && events.length > 0) {
+      const todayEvents = events.filter(this.isTodayEvent);
       if (todayEvents && todayEvents.length > 0) {
 
-        this.setState({todayEvents}, () => { // Guardo os eventos do dia no state
+        this.setState({todayEvents}, () => {
           this.eventsInterval = setInterval(() => {
             const {todayEvents} = this.state;
-            const event = todayEvents.find(this.isEventFuture) // Verifico se tem evento com a hora e minuto atual
+            const event = todayEvents.find(this.isEventFuture) 
             if (event) {
               alert('Nome do Evento: ' + event.title);
             }
-          }, 60000); // 1 em 1min
+          }, 60000); 
         });
       }
     }
