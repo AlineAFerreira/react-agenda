@@ -1,38 +1,89 @@
-.App {
-  text-align: center;
+body {
+    font-family: 'Roboto', sans-serif;
+}
+.modal-overlay {
+    z-index: 1;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modal-agenda {
+    max-height: 530px;
+    width: 500px;
+    left: 0px;
+    top: 0px;
+    min-height: 300px;
+    position: relative;
+    background-color: #fff;
+    outline: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.modal-header {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.modal-header button{
+    border: none;
+    padding: 5px;
+    background-color: none;
+    cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.modal-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
 }
 
-.App-link {
-  color: #61dafb;
+label {
+    color: #747474;
+    font-size: 13px;
+    display: block;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input, textarea{
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 8px 10px;
+    margin-bottom: 10px;
+    outline: none;
+}
+
+.modal-footer {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.modal-footer button {
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    outline: none;
+    padding: 6px 12px 4px;
+    text-transform: uppercase;
+    transition: all .4s;
+}
+
+.modal-footer button + button {
+    margin-left: 10px;
+}
+
+.modal-footer button:hover {
+    background-color: #ccc
+    ;
 }
